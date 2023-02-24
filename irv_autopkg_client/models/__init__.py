@@ -7,6 +7,8 @@ from .envelope import Envelope
 from .geometry import Geometry
 from .http_validation_error import HTTPValidationError
 from .job import Job
+from .job_group_status import JobGroupStatus
+from .job_progress import JobProgress
 from .job_result import JobResult
 from .job_status import JobStatus
 from .license_ import License
@@ -26,6 +28,8 @@ __all__ = (
     "Geometry",
     "HTTPValidationError",
     "Job",
+    "JobGroupStatus",
+    "JobProgress",
     "JobResult",
     "JobStatus",
     "License",

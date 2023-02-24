@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import Client
 from ...models.http_validation_error import HTTPValidationError
-from ...models.job_status import JobStatus
+from ...models.job_group_status import JobGroupStatus
 from ...types import Response
 
 
@@ -31,9 +31,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Client, response: httpx.Response
-) -> Optional[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Optional[Union[Any, HTTPValidationError, JobGroupStatus]]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = JobStatus.from_dict(response.json())
+        response_200 = JobGroupStatus.from_dict(response.json())
 
         return response_200
     if response.status_code == HTTPStatus.NOT_FOUND:
@@ -51,7 +51,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Client, response: httpx.Response
-) -> Response[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Response[Union[Any, HTTPValidationError, JobGroupStatus]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -64,7 +64,7 @@ def sync_detailed(
     job_id: str,
     *,
     client: Client,
-) -> Response[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Response[Union[Any, HTTPValidationError, JobGroupStatus]]:
     """Get Status
 
      Get status of a DAG associated with a given package
@@ -77,7 +77,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, HTTPValidationError, JobStatus]]
+        Response[Union[Any, HTTPValidationError, JobGroupStatus]]
     """
 
     kwargs = _get_kwargs(
@@ -97,7 +97,7 @@ def sync(
     job_id: str,
     *,
     client: Client,
-) -> Optional[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Optional[Union[Any, HTTPValidationError, JobGroupStatus]]:
     """Get Status
 
      Get status of a DAG associated with a given package
@@ -110,7 +110,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, HTTPValidationError, JobStatus]]
+        Response[Union[Any, HTTPValidationError, JobGroupStatus]]
     """
 
     return sync_detailed(
@@ -123,7 +123,7 @@ async def asyncio_detailed(
     job_id: str,
     *,
     client: Client,
-) -> Response[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Response[Union[Any, HTTPValidationError, JobGroupStatus]]:
     """Get Status
 
      Get status of a DAG associated with a given package
@@ -136,7 +136,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, HTTPValidationError, JobStatus]]
+        Response[Union[Any, HTTPValidationError, JobGroupStatus]]
     """
 
     kwargs = _get_kwargs(
@@ -154,7 +154,7 @@ async def asyncio(
     job_id: str,
     *,
     client: Client,
-) -> Optional[Union[Any, HTTPValidationError, JobStatus]]:
+) -> Optional[Union[Any, HTTPValidationError, JobGroupStatus]]:
     """Get Status
 
      Get status of a DAG associated with a given package
@@ -167,7 +167,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, HTTPValidationError, JobStatus]]
+        Response[Union[Any, HTTPValidationError, JobGroupStatus]]
     """
 
     return (

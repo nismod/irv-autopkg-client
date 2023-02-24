@@ -63,9 +63,7 @@ def sync_detailed(
 ) -> Response[Union[Any, HTTPValidationError, Package]]:
     """Get Package
 
-     Retrieve information a specific package (which has been created from a given boundary)
-
-    Datasets are either executing (being generated),  completed (exist on the FS), or do not exist.
+     Retrieve information about a specific package (which has been created from a given boundary)
 
     Args:
         boundary_name (str):
@@ -98,9 +96,7 @@ def sync(
 ) -> Optional[Union[Any, HTTPValidationError, Package]]:
     """Get Package
 
-     Retrieve information a specific package (which has been created from a given boundary)
-
-    Datasets are either executing (being generated),  completed (exist on the FS), or do not exist.
+     Retrieve information about a specific package (which has been created from a given boundary)
 
     Args:
         boundary_name (str):
@@ -126,9 +122,7 @@ async def asyncio_detailed(
 ) -> Response[Union[Any, HTTPValidationError, Package]]:
     """Get Package
 
-     Retrieve information a specific package (which has been created from a given boundary)
-
-    Datasets are either executing (being generated),  completed (exist on the FS), or do not exist.
+     Retrieve information about a specific package (which has been created from a given boundary)
 
     Args:
         boundary_name (str):
@@ -159,9 +153,7 @@ async def asyncio(
 ) -> Optional[Union[Any, HTTPValidationError, Package]]:
     """Get Package
 
-     Retrieve information a specific package (which has been created from a given boundary)
-
-    Datasets are either executing (being generated),  completed (exist on the FS), or do not exist.
+     Retrieve information about a specific package (which has been created from a given boundary)
 
     Args:
         boundary_name (str):

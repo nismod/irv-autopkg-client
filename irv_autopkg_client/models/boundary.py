@@ -3,8 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 import attr
 
 if TYPE_CHECKING:
-    from ..models.envelope import Envelope
-    from ..models.geometry import Geometry
+    from ..models.geo_json import GeoJSON
 
 
 T = TypeVar("T", bound="Boundary")
@@ -18,15 +17,15 @@ class Boundary:
         name (str):
         name_long (str):
         admin_level (str):
-        geometry (Geometry):
-        envelope (Envelope):
+        geometry (GeoJSON):
+        envelope (GeoJSON):
     """
 
     name: str
     name_long: str
     admin_level: str
-    geometry: "Geometry"
-    envelope: "Envelope"
+    geometry: "GeoJSON"
+    envelope: "GeoJSON"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,8 +52,7 @@ class Boundary:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.envelope import Envelope
-        from ..models.geometry import Geometry
+        from ..models.geo_json import GeoJSON
 
         d = src_dict.copy()
         name = d.pop("name")
@@ -63,9 +61,9 @@ class Boundary:
 
         admin_level = d.pop("admin_level")
 
-        geometry = Geometry.from_dict(d.pop("geometry"))
+        geometry = GeoJSON.from_dict(d.pop("geometry"))
 
-        envelope = Envelope.from_dict(d.pop("envelope"))
+        envelope = GeoJSON.from_dict(d.pop("envelope"))
 
         boundary = cls(
             name=name,

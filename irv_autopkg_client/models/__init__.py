@@ -2,9 +2,8 @@
 
 from .boundary import Boundary
 from .boundary_summary import BoundarySummary
-from .datapackage import Datapackage
-from .envelope import Envelope
-from .geometry import Geometry
+from .data_package import DataPackage
+from .geo_json import GeoJSON
 from .http_validation_error import HTTPValidationError
 from .job import Job
 from .job_group_status import JobGroupStatus
@@ -23,9 +22,8 @@ from .validation_error import ValidationError
 __all__ = (
     "Boundary",
     "BoundarySummary",
-    "Datapackage",
-    "Envelope",
-    "Geometry",
+    "DataPackage",
+    "GeoJSON",
     "HTTPValidationError",
     "Job",
     "JobGroupStatus",

@@ -2,11 +2,11 @@ from typing import Any, Dict, List, Type, TypeVar
 
 import attr
 
-T = TypeVar("T", bound="Datapackage")
+T = TypeVar("T", bound="GeoJSON")
 
 
 @attr.s(auto_attribs=True)
-class Datapackage:
+class GeoJSON:
     """ """
 
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -21,10 +21,10 @@ class Datapackage:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        datapackage = cls()
+        geo_json = cls()
 
-        datapackage.additional_properties = d
-        return datapackage
+        geo_json.additional_properties = d
+        return geo_json
 
     @property
     def additional_keys(self) -> List[str]:

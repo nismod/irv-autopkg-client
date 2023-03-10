@@ -4,7 +4,7 @@ import attr
 
 if TYPE_CHECKING:
     from ..models.boundary import Boundary
-    from ..models.datapackage import Datapackage
+    from ..models.data_package import DataPackage
     from ..models.processor import Processor
 
 
@@ -20,14 +20,14 @@ class Package:
         uri (str):
         boundary (Boundary): Complete boundary information
         processors (List['Processor']):
-        datapackage (Datapackage):
+        datapackage (DataPackage):
     """
 
     boundary_name: str
     uri: str
     boundary: "Boundary"
     processors: List["Processor"]
-    datapackage: "Datapackage"
+    datapackage: "DataPackage"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -60,7 +60,7 @@ class Package:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.boundary import Boundary
-        from ..models.datapackage import Datapackage
+        from ..models.data_package import DataPackage
         from ..models.processor import Processor
 
         d = src_dict.copy()
@@ -77,7 +77,7 @@ class Package:
 
             processors.append(processors_item)
 
-        datapackage = Datapackage.from_dict(d.pop("datapackage"))
+        datapackage = DataPackage.from_dict(d.pop("datapackage"))
 
         package = cls(
             boundary_name=boundary_name,

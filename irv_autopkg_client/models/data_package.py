@@ -2,11 +2,11 @@ from typing import Any, Dict, List, Type, TypeVar
 
 import attr
 
-T = TypeVar("T", bound="Geometry")
+T = TypeVar("T", bound="DataPackage")
 
 
 @attr.s(auto_attribs=True)
-class Geometry:
+class DataPackage:
     """ """
 
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -21,10 +21,10 @@ class Geometry:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        geometry = cls()
+        data_package = cls()
 
-        geometry.additional_properties = d
-        return geometry
+        data_package.additional_properties = d
+        return data_package
 
     @property
     def additional_keys(self) -> List[str]:

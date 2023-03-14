@@ -1,64 +1,101 @@
-import ssl
-from typing import Dict, Union
+import urllib.parse
 
-import attr
+import logging
+import requests
+from typing import Optional
 
 
-@attr.s(auto_attribs=True)
+BASE_URL: str = "https://global.infrastructureresilience.org/extract/v1/"
+
+# requests will log requests @ debug level
+logging.basicConfig(format="%(asctime)s %(message)s", level=logging.DEBUG)
+
+
 class Client:
-    """A class for keeping track of data related to the API
+    """
 
     Attributes:
         base_url: The base URL for the API, all requests are made to a relative path to this URL
-        cookies: A dictionary of cookies to be sent with every request
-        headers: A dictionary of headers to be sent with every request
-        timeout: The maximum amount of a time in seconds a request can take. API functions will raise
-            httpx.TimeoutException if this is exceeded.
-        verify_ssl: Whether or not to verify the SSL certificate of the API server. This should be True in production,
-            but can be set to False for testing purposes.
-        raise_on_unexpected_status: Whether or not to raise an errors.UnexpectedStatus if the API returns a
-            status code that was not documented in the source OpenAPI document.
+        timeout: The maximum amount of a time in seconds a request can take.
+        _session: A requests.Session used for all requests
     """
 
-    base_url: str
-    cookies: Dict[str, str] = attr.ib(factory=dict, kw_only=True)
-    headers: Dict[str, str] = attr.ib(factory=dict, kw_only=True)
-    timeout: float = attr.ib(5.0, kw_only=True)
-    verify_ssl: Union[str, bool, ssl.SSLContext] = attr.ib(True, kw_only=True)
-    raise_on_unexpected_status: bool = attr.ib(False, kw_only=True)
+    def __init__(
+        self,
+        base_url: str = BASE_URL,
+        timeout: float = 20,
+        **kwargs
+    ):
+        self.base_url = base_url
+        self.timeout = timeout
+        self._session = requests.Session()
 
-    def get_headers(self) -> Dict[str, str]:
-        """Get headers to be used in all endpoints"""
-        return {**self.headers}
+    def request(self, verb: str, route: str, *args, **kwargs) -> requests.Response:
+        """
+        Wrap requests' request and prepend self.base_url to the requested route.
+        """
 
-    def with_headers(self, headers: Dict[str, str]) -> "Client":
-        """Get a new client matching this one with additional headers"""
-        return attr.evolve(self, headers={**self.headers, **headers})
+        if "timeout" in kwargs:
+            timeout = kwargs.pop("timeout")
+        else:
+            timeout = self.timeout
 
-    def get_cookies(self) -> Dict[str, str]:
-        return {**self.cookies}
+        url = urllib.parse.urljoin(self.base_url, route)
 
-    def with_cookies(self, cookies: Dict[str, str]) -> "Client":
-        """Get a new client matching this one with additional cookies"""
-        return attr.evolve(self, cookies={**self.cookies, **cookies})
+        response = self._session.request(
+            verb,
+            url,
+            *args,
+            timeout=timeout,
+            **kwargs
+        )
 
-    def get_timeout(self) -> float:
-        return self.timeout
+        response.raise_for_status()
 
-    def with_timeout(self, timeout: float) -> "Client":
-        """Get a new client matching this one with a new timeout (in seconds)"""
-        return attr.evolve(self, timeout=timeout)
+        return response.json()
+
+    def list_boundaries(self) -> list:
+        """
+
+        """
+        return self.request("GET", "boundaries")
+
+    def boundary(self, name: str) -> dict:
+        """
+
+        """
+        return self.request("GET", f"boundaries/{name}")
+
+    def boundary_search(
+        self,
+        *,
+        name: Optional[str] = None,
+        latitude: Optional[float] = None,
+        longitude: Optional[float] = None
+    ) -> dict:
+        """
+
+        """
+        query_params = {}
+        if name is not None:
+            query_params["name"] = name
+        if latitude is not None:
+            query_params["latitude"] = latitude
+        if longitude is not None:
+            query_params["longitude"] = longitude
+
+        return self.request("GET", "boundaries/search", params=query_params)
+
+    def job(self, uuid: str) -> dict:
+        """
+
+        """
 
 
-@attr.s(auto_attribs=True)
-class AuthenticatedClient(Client):
-    """A Client which has been authenticated for use on secured endpoints"""
-
-    token: str
-    prefix: str = "Bearer"
-    auth_header_name: str = "Authorization"
-
-    def get_headers(self) -> Dict[str, str]:
-        """Get headers to be used in authenticated endpoints"""
-        auth_header_value = f"{self.prefix} {self.token}" if self.prefix else self.token
-        return {self.auth_header_name: auth_header_value, **self.headers}
+# "/jobs/{job_id}".format(client.base_url, job_id=job_id)
+# "/jobs".format(client.base_url)
+# "/packages".format(client.base_url)
+# "/packages/{boundary_name}".format(client.base_url, boundary_name=boundary_name)
+# "/liveness".format(client.base_url)
+# "/readiness".format(client.base_url)
+# "/processors".format(client.base_url)

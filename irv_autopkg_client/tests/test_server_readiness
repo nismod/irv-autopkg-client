@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://global.infrastructureresilience.org/extract/v1/readiness
+  response:
+    body:
+      string: '{"status":"ready"}'
+    headers:
+      Content-Length:
+      - '18'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 Mar 2023 16:22:45 GMT
+      Server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+version: 1

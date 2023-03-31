@@ -1,0 +1,227 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://global.infrastructureresilience.org/extract/v1/processors
+  response:
+    body:
+      string: "[{\"name\":\"gri_osm\",\"versions\":[{\"name\":\"gri_osm.roads_and_rail_version_1\",\"description\":\"Extraction
+        from GRI OSM Table for Roads and Rail, including Damages\",\"version\":\"roads_and_rail_version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"nismod/open-gira
+        contributors and OpenStreetMap contributors\",\"data_title\":\"Road and Rail
+        networks derived from OpenStreetMap\",\"data_title_long\":\"Road and Rail
+        networks derived from OpenStreetMap\",\"data_summary\":\"\\nOpenStreetMap
+        provides map data, including on road and railway networks.\\nThis dataset
+        is a derived, processed extract from the global OpenStreetMap\\ndatabase,
+        produced by researchers at the University of Oxford to support\\ninfrastructure
+        systems analysis and climate risk and resilience assessments.\\n\\nThe data
+        is produced from a snapshot of OpenStreetMap (the current version is \\ntaken
+        from November 2022) by a reproducible pipeline which is under development\\nand
+        made freely available at https://github.com/nismod/open-gira.\\n    \",\"data_citation\":\"\\nRussell
+        T., Thomas F., nismod/open-gira contributors and OpenStreetMap contributors
+        (2022)\\nGlobal Road and Rail networks derived from OpenStreetMap. [Dataset]
+        Available at https://global.infrastructureresilience.org\\n    \",\"data_license\":{\"name\":\"ODbL-1.0\",\"path\":\"https://opendefinition.org/licenses/odc-odbl\",\"title\":\"Open
+        Data Commons Open Database License 1.0\"},\"data_origin_url\":\"https://global.infrastructureresilience.org\",\"data_formats\":[\"Geopackage\"]}]},{\"name\":\"gridfinder\",\"versions\":[{\"name\":\"gridfinder.version_1\",\"description\":\"gridfinder
+        - Predictive mapping of the global power system using open data\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Arderne,
+        Christopher; Nicolas, Claire; Zorn, Conrad; Koks, Elco E\",\"data_title\":\"Gridfinder\",\"data_title_long\":\"Gridfinder
+        data from 'Predictive mapping of the global power system using open data'\",\"data_summary\":\"\\nThree
+        primary global data outputs from the research:\\n\\ngrid.gpkg: Vectorized
+        predicted distribution and transmission line network, with existing OpenStreetMap
+        lines tagged in the 'source' column\\ntargets.tif: Binary raster showing locations
+        predicted to be connected to distribution grid. \\nlv.tif: Raster of predicted
+        low-voltage infrastructure in kilometres per cell.\\n\\nThis data was created
+        with code in the following three repositories:\\n\\nhttps://github.com/carderne/gridfinder\\nhttps://github.com/carderne/predictive-mapping-global-power\\nhttps://github.com/carderne/access-estimator\\n\\nFull
+        steps to reproduce are contained in this file:\\n\\nhttps://github.com/carderne/predictive-mapping-global-power/blob/master/README.md\\n\\nThe
+        data can be visualized at the following location:\\n\\nhttps://gridfinder.org\\n
+        \   \",\"data_citation\":\"\\nArderne, Christopher, Nicolas, Claire, Zorn,
+        Conrad, & Koks, Elco E. (2020).\\nData from: Predictive mapping of the global
+        power system using open data [Data\\nset]. In Nature Scientific Data (1.1.1,
+        Vol. 7, Number Article 19). Zenodo.\\nhttps://doi.org/10.5281/zenodo.3628142
+        \   \\n\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"https://doi.org/10.5281/zenodo.3628142\",\"data_formats\":[\"Geopackage\",\"GeoTIFF\"]}]},{\"name\":\"isimp_drought\",\"versions\":[{\"name\":\"isimp_drought.version_1\",\"description\":\"ISIMP
+        Drought v1 processor\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Lange,
+        S., Volkholz, J., Geiger, T., Zhao, F., Vega, I., Veldkamp, T., et al. (2020)\",\"data_title\":\"ISIMP
+        Drought\",\"data_title_long\":\"Annual probability of extreme heat and drought
+        events, derived from Lange et al 2020\",\"data_summary\":\"\\nThe time series
+        of extreme events given by Lange et al has been processed into an annual probability
+        of occurrence by researchers at the University of Oxford, using the pipeline
+        available online at https://github.com/nismod/infra-risk-vis/blob/45d8974c311067141ee6fcaa1321c7ecdaa59752/etl/pipelines/isimip/Snakefile
+        - this is a draft dataset, used for visualisation in https://global.infrastructureresilience.org/
+        but not otherwise reviewed or published.\\n\\nIf you use this, please cite:
+        Lange, S., Volkholz, J., Geiger, T., Zhao, F., Vega, I., Veldkamp, T., et
+        al. (2020). Projecting exposure to extreme climate impact events across six
+        event categories and three spatial scales. Earth's Future, 8, e2020EF001616.
+        DOI 10.1029/2020EF001616\\n\\nThis is shared under a CC0 1.0 Universal Public
+        Domain Dedication (CC0 1.0) When using ISIMIP data for your research, please
+        appropriately credit the data providers, e.g. either by citing the DOI for
+        the dataset, or by appropriate acknowledgment.\\n\\nAnnual probability of
+        drought (soil moisture below a baseline threshold) or extreme heat (temperature
+        and humidity-based indicators over a threshold) events on a 0.5\xB0 grid.
+        8 hydrological models forced by 4 GCMs under baseline, RCP 2.6 & 6.0 emission
+        scenarios. Current and future maps in 2030, 2050 and 2080.\\n\\nThe ISIMIP2b
+        climate input data and impact model output data analyzed in this study are
+        available in the ISIMIP data repository at ESGF, see https://esg.pik-potsdam.de/search/isimip/?project=ISIMIP2b&product=input
+        and https://esg.pik-potsdam.de/search/isimip/?project=ISIMIP2b&product=output,
+        respectively. More information about the GHM, GGCM, and GVM output data is
+        provided by Gosling et al. (2020), Arneth et al. (2020), and Reyer et al.
+        (2019), respectively.\\n\\nEvent definitions are given in Lange et al, table
+        1. Land area is exposed to drought if monthly soil moisture falls below the
+        2.5th percentile of the preindustrial baseline distribution for at least seven
+        consecutive months. Land area is exposed to extreme heat if both a relative
+        indicator based on temperature (Russo et al 2015, 2017) and an absolute indicator
+        based on temperature and relative humidity (Masterton & Richardson, 1979)
+        exceed their respective threshold value.\\n    \",\"data_citation\":\"\\nLange,
+        S., Volkholz, J., Geiger, T., Zhao, F., Vega, I., Veldkamp, T., et al. (2020).
+        Projecting exposure to extreme climate impact events across six event categories
+        and three spatial scales. Earth's Future, 8, e2020EF001616. DOI 10.1029/2020EF001616
+        \  \\n    \",\"data_license\":{\"name\":\"CC0\",\"path\":\"https://creativecommons.org/share-your-work/public-domain/cc0/\",\"title\":\"CC0\"},\"data_origin_url\":\"https://doi.org/10.5281/zenodo.7732393\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"jrc_ghsl_built_c\",\"versions\":[{\"name\":\"jrc_ghsl_built_c.r2022_epoch2018_10m_mszfun\",\"description\":\"\\nA
+        Processor for JRC GHSL Built-Up Characteristics - \\nR2022 release, Epoch
+        2018, 10m resolution, Morphological Settlement Zone and Functional classification\\n
+        \   \",\"version\":\"r2022_epoch2018_10m_mszfun\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Joint
+        Research Centre\",\"data_title\":\"GHS-BUILT-C MSZ and FC, R2022 E2018 10m\",\"data_title_long\":\"JRC
+        Global Human Settlement Layer - Built-Up Characteristics (GHS-BUILT-C - MSZ
+        & FC) - Release 2022 - Epoch 2018 - 10m resolution - Morphological Settlement
+        Zone & Functional Classification\",\"data_summary\":\"\\nThe spatial raster
+        dataset delineates the boundaries of the human settlements at\\n10m resolution,
+        and describe their inner characteristics in terms of the\\nmorphology of the
+        built environment and the functional use. The Morphological\\nSettlement Zone
+        (MSZ) delineates the spatial domain of all the human settlements\\nat the
+        neighboring scale of approx. 100m, based on the spatial generalization of\\nthe
+        built-up surface fraction (BUFRAC) function. The objective is to fill the\\nopen
+        spaces that are surrounded by large patches of built space. MSZ, open\\nspaces,
+        and built spaces basic class abstractions are derived by mathematical\\nmorphology
+        spatial filtering (opening, closing, regional maxima) from the BUFRAC\\nfunction.
+        They are further classified according to the information regarding\\nvegetation
+        intensity (GHS-BUILT-C_VEG_GLOBE_R2022A), water surfaces\\n(GHS_LAND_GLOBE_R2022A),
+        road surfaces (OSM highways), functional use\\n(GHS-BUILT-C_FUN_GLOBE_R2022A),
+        and building height (GHS-BUILT-H_GLOBE_R2022A).\\n\\nThe main characteristics
+        of this dataset are listed below. The complete\\ninformation about the GHSL
+        main products can be found in the GHSL Data Package\\n2022 report (10.33 MB):\\nhttps://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2022.pdf\\n
+        \   \",\"data_citation\":\"\\nDataset:\\n\\nPesaresi M., P. Panagiotis (2022):
+        GHS-BUILT-C R2022A - GHS Settlement\\nCharacteristics, derived from Sentinel2
+        composite (2018) and other GHS R2022A\\ndata.European Commission, Joint Research
+        Centre (JRC) PID:\\nhttp://data.europa.eu/89h/dde11594-2a66-4c1b-9a19-821382aed36e,\\ndoi:10.2905/DDE11594-2A66-4C1B-9A19-821382AED36E\\n\\nConcept
+        & Methodology:\\n\\nSchiavina M., Melchiorri M., Pesaresi M., Politis P.,
+        Freire S., Maffenini L.,\\nFlorio P., Ehrlich D., Goch K., Tommasi P., Kemper
+        T. GHSL Data Package 2022,\\nJRC 129516, ISBN 978-92-76-53071-8 doi:10.2760/19817
+        \\n    \",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"https://ghsl.jrc.ec.europa.eu/download.php?ds=builtC\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"jrc_ghsl_population\",\"versions\":[{\"name\":\"jrc_ghsl_population.r2022_epoch2020_1km\",\"description\":\"A
+        Processor for JRC GHSL Population - R2022 release, Epoch 2020, 1Km resolution\",\"version\":\"r2022_epoch2020_1km\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Joint
+        Research Centre\",\"data_title\":\"GHS-POP - R2022A\",\"data_title_long\":\"GHS-POP
+        R2022A - extract from GHS population grid for 2020, 1km resolution\",\"data_summary\":\"\\nThe
+        spatial raster dataset depicts the distribution of residential population,\\nexpressed
+        as the number of people per cell. Residential population estimates\\nbetween
+        1975 and 2020 in 5-year intervals and projections to 2025 and 2030\\nderived
+        from CIESIN GPWv4.11 were disaggregated from census or administrative\\nunits
+        to grid cells, informed by the distribution, density, and classification\\nof
+        built-up as mapped in the Global Human Settlement Layer (GHSL) global layer\\nper
+        corresponding epoch.\\n\\nThe complete information about the GHSL main products
+        can be found in the GHSL\\nData Package 2022 report (10.33 MB):\\nhttps://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2022.pdf\\n
+        \   \",\"data_citation\":\"\\nDataset:\\n\\nSchiavina M., Freire S., MacManus
+        K. (2022): GHS-POP R2022A - GHS population\\ngrid multitemporal (1975-2030).European
+        Commission, Joint Research Centre (JRC)\\nPID: http://data.europa.eu/89h/d6d86a90-4351-4508-99c1-cb074b022c4a,\\ndoi:10.2905/D6D86A90-4351-4508-99C1-CB074B022C4A\\n\\nConcept
+        & Methodology:\\n\\nFreire S., MacManus K., Pesaresi M., Doxsey-Whitfield
+        E., Mills J. (2016)\\nDevelopment of new open and free multi-temporal global
+        population grids at 250 m\\nresolution. Geospatial Data in a Changing World;
+        Association of Geographic\\nInformation Laboratories in Europe (AGILE), AGILE
+        2016\\n    \",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"https://ghsl.jrc.ec.europa.eu/download.php?ds=pop\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"natural_earth_raster\",\"versions\":[{\"name\":\"natural_earth_raster.version_1\",\"description\":\"A
+        Test Processor for Natural Earth image\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Natural
+        Earth Data\",\"data_title\":\"\",\"data_title_long\":\"\",\"data_summary\":\"\",\"data_citation\":\"\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"https://www.naturalearthdata.com/downloads/50m-natural-earth-2/50m-natural-earth-ii-with-shaded-relief/\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"natural_earth_vector\",\"versions\":[{\"name\":\"natural_earth_vector.version_1\",\"description\":\"A
+        Test Processor for Natural Earth vector\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Natural
+        Earth Data\",\"data_title\":\"\",\"data_title_long\":\"\",\"data_summary\":\"\",\"data_citation\":\"\",\"data_license\":{\"name\":\"Natural
+        Earth\",\"path\":\"https://www.naturalearthdata.com/about/terms-of-use/\",\"title\":\"Natural
+        Earth\"},\"data_origin_url\":\"https://www.naturalearthdata.com/downloads/10m-cultural-vectors/roads/\",\"data_formats\":[\"Geopackage\"]}]},{\"name\":\"storm\",\"versions\":[{\"name\":\"storm.global_mosaics_version_1\",\"description\":\"A
+        Processor for WRI Aqueduct\",\"version\":\"global_mosaics_version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"University
+        of Oxford\",\"data_title\":\"STORM tropical cyclone wind speed maps\",\"data_title_long\":\"STORM
+        tropical cyclone wind speed return period maps as global GeoTIFFs\",\"data_summary\":\"\\nGlobal
+        tropical cyclone wind speed return period maps.\\n\\nThis dataset is derived
+        with minimal processing from the following datasets\\ncreated by Bloemendaal
+        et al, which are released with a CC0 license:\\n\\n[1] Bloemendaal, Nadia;
+        de Moel, H. (Hans); Muis, S; Haigh, I.D. (Ivan); Aerts,\\nJ.C.J.H. (Jeroen)
+        (2020): STORM tropical cyclone wind speed return periods.\\n4TU.ResearchData.
+        Dataset. https://doi.org/10.4121/12705164.v3\\n\\n[2] Bloemendaal, Nadia;
+        de Moel, Hans; Dullaart, Job; Haarsma, R.J. (Reindert);\\nHaigh, I.D. (Ivan);
+        Martinez, Andrew B.; et al. (2022): STORM climate change\\ntropical cyclone
+        wind speed return periods. 4TU.ResearchData. Dataset.\\nhttps://doi.org/10.4121/14510817.v3\\n\\nDatasets
+        containing tropical cyclone maximum wind speed (in m/s) return periods,\\ngenerated
+        using the STORM datasets (see\\nhttps://www.nature.com/articles/s41597-020-0381-2)
+        and STORM climate change\\ndatasets (see https://figshare.com/s/397aff8631a7da2843fc).
+        Return periods were\\nempirically calculated using Weibull's plotting formula.
+        The\\nSTORM_FIXED_RETURN_PERIOD dataset contains maximum wind speeds for a
+        fixed set\\nof return periods at 10 km resolution in every basin and for every
+        climate model\\nused here (see below).\\n\\nThe GeoTIFFs provided in the datasets
+        linked above have been mosaicked into\\nsingle files with global extent for
+        each climate model/return period using the\\nfollowing code:\\n\\nhttps://github.com/nismod/open-gira/blob/219315e57cba54bb18f033844cff5e48dd5979d7/workflow/rules/download/storm-ibtracs.smk#L126-L151\\n\\nFiles
+        are named on the pattern:\\nSTORM_FIXED_RETURN_PERIODS_{STORM_MODEL}_{STORM_RP}_YR_RP.tif\\n\\nSTORM_MODEL
+        is be one of constant, CMCC-CM2-VHR4, CNRM-CM6-1-HR, EC-Earth3P-HR\\nor HadGEM3-GC31-HM.
+        The \\\"constant\\\" files are for the present day, baseline\\nclimate scenario
+        as explained in dataset [1]. The other files are for 2050,\\nRCP8.5 under
+        different models as explained in the paper linked from dataset [2].\\n\\nSTORM_RP
+        is one of 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500,\\n600,
+        700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000 or\\n10000.\\n\",\"data_citation\":\"\\nRussell,
+        Tom. (2022). STORM tropical cyclone wind speed return periods as global\\nGeoTIFFs
+        (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7438145\\n    \\nDerived
+        from:\\n    \\n[1] Bloemendaal, Nadia; de Moel, H. (Hans); Muis, S; Haigh,
+        I.D. (Ivan); Aerts,\\nJ.C.J.H. (Jeroen) (2020): STORM tropical cyclone wind
+        speed return periods.\\n4TU.ResearchData. Dataset. https://doi.org/10.4121/12705164.v3\\n\\n[2]
+        Bloemendaal, Nadia; de Moel, Hans; Dullaart, Job; Haarsma, R.J. (Reindert);\\nHaigh,
+        I.D. (Ivan); Martinez, Andrew B.; et al. (2022): STORM climate change\\ntropical
+        cyclone wind speed return periods. 4TU.ResearchData. Dataset.\\nhttps://doi.org/10.4121/14510817.v3\\n
+        \   \",\"data_license\":{\"name\":\"CC0\",\"path\":\"https://creativecommons.org/share-your-work/public-domain/cc0/\",\"title\":\"CC0\"},\"data_origin_url\":\"https://doi.org/10.5281/zenodo.7438145\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"test_fail_processor\",\"versions\":[{\"name\":\"test_fail_processor.version_1\",\"description\":\"A
+        test processor that fails\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"\",\"data_title\":\"\",\"data_title_long\":\"\",\"data_summary\":\"\",\"data_citation\":\"\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"http://url\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"test_processor\",\"versions\":[{\"name\":\"test_processor.version_1\",\"description\":\"A
+        test processor for nightlights\",\"version\":\"version_1\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Nightlights
+        Author\",\"data_title\":\"\",\"data_title_long\":\"\",\"data_summary\":\"\",\"data_citation\":\"\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"http://url\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"wri_aqueduct\",\"versions\":[{\"name\":\"wri_aqueduct.version_2\",\"description\":\"A
+        Processor for WRI Aqueduct\",\"version\":\"version_2\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"Ward,
+        P.J., H.C. Winsemius, S. Kuzma, M.F.P. Bierkens, A. Bouwman, H. de Moel, A.
+        D\xEDaz Loaiza, et al.\",\"data_title\":\"Aqueduct Flood Hazard Maps\",\"data_title_long\":\"World
+        Resource Institute - Aqueduct Flood Hazard Maps (Version 2, updated October
+        20, 2020)\",\"data_summary\":\"World Resource Institute - Aqueduct Flood Hazard
+        Maps (Version 2 (updated\\nOctober 20, 2020)).  Inundation depth in meters
+        for coastal and riverine\\nfloods over 1km grid squares. 1 in 2 to 1 in 1000
+        year return periods.\\nBaseline, RCP 4.5 & 8.5 emission scenarios. Current
+        and future maps in 2030,\\n2050 and 2080.\",\"data_citation\":\"\\nWard, P.J.,
+        H.C. Winsemius, S. Kuzma, M.F.P. Bierkens, A. Bouwman, H. de Moel, A. D\xEDaz
+        Loaiza, et al. 2020.\\nAqueduct Floods Methodology. Technical Note. Washington,
+        D.C.: World Resources Institute. Available online at:\\nwww.wri.org/publication/aqueduct-floods-methodology.\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html\",\"data_formats\":[\"GeoTIFF\"]}]},{\"name\":\"wri_powerplants\",\"versions\":[{\"name\":\"wri_powerplants.version_130\",\"description\":\"World
+        Resources Institute - Global Powerplants\",\"version\":\"version_130\",\"status\":\"\",\"uri\":\"\",\"data_author\":\"World
+        Resources Institute\",\"data_title\":\"WRI Global Power Plant Database\",\"data_title_long\":\"World
+        Resources Institute Global Power Plant Database\",\"data_summary\":\"The Global
+        Power Plant Database is a comprehensive, open source database of power plants
+        around the world. It\\ncentralizes power plant data to make it easier to navigate,
+        compare and draw insights for one\u2019s own analysis.\\nThe database covers
+        approximately 35,000 power plants from 167 countries and includes thermal
+        plants (e.g. coal,\\ngas, oil, nuclear, biomass, waste, geothermal) and renewables
+        (e.g. hydro, wind, solar). Each power plant is\\ngeolocated and entries contain
+        information on plant capacity, generation, ownership, and fuel type. It will
+        be\\ncontinuously updated as data becomes available.\",\"data_citation\":\"Global
+        Energy Observatory, Google, KTH Royal Institute of Technology in Stockholm,
+        Enipedia, World Resources\\nInstitute. 2018. Global Power Plant Database.
+        Published on Resource Watch and Google Earth Engine;\\nhttp://resourcewatch.org/
+        https://earthengine.google.com/\",\"data_license\":{\"name\":\"CC-BY-4.0\",\"path\":\"https://creativecommons.org/licenses/by/4.0/\",\"title\":\"Creative
+        Commons Attribution 4.0\"},\"data_origin_url\":\"https://datasets.wri.org/dataset/globalpowerplantdatabase\",\"data_formats\":[\"Geopackage\"]}]}]"
+    headers:
+      Content-Length:
+      - '19429'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 Mar 2023 16:22:44 GMT
+      Server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+version: 1

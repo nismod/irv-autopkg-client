@@ -8,6 +8,7 @@ dist/
 .python-version
 
 # Environments
+env.yaml
 .env
 .venv
 

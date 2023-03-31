@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://global.infrastructureresilience.org/extract/v1/boundaries
+  response:
+    body:
+      string: "[{\"name\":\"afg\",\"name_long\":\"Afghanistan\"},{\"name\":\"ala\",\"name_long\":\"Aland\"},{\"name\":\"alb\",\"name_long\":\"Albania\"},{\"name\":\"dza\",\"name_long\":\"Algeria\"},{\"name\":\"asm\",\"name_long\":\"American
+        Samoa\"},{\"name\":\"and\",\"name_long\":\"Andorra\"},{\"name\":\"ago\",\"name_long\":\"Angola\"},{\"name\":\"aia\",\"name_long\":\"Anguilla\"},{\"name\":\"ata\",\"name_long\":\"Antarctica\"},{\"name\":\"atg\",\"name_long\":\"Antigua
+        and Barbuda\"},{\"name\":\"arg\",\"name_long\":\"Argentina\"},{\"name\":\"arm\",\"name_long\":\"Armenia\"},{\"name\":\"abw\",\"name_long\":\"Aruba\"},{\"name\":\"aus\",\"name_long\":\"Australia\"},{\"name\":\"aut\",\"name_long\":\"Austria\"},{\"name\":\"aze\",\"name_long\":\"Azerbaijan\"},{\"name\":\"bhr\",\"name_long\":\"Bahrain\"},{\"name\":\"bgd\",\"name_long\":\"Bangladesh\"},{\"name\":\"brb\",\"name_long\":\"Barbados\"},{\"name\":\"blr\",\"name_long\":\"Belarus\"},{\"name\":\"bel\",\"name_long\":\"Belgium\"},{\"name\":\"blz\",\"name_long\":\"Belize\"},{\"name\":\"ben\",\"name_long\":\"Benin\"},{\"name\":\"bmu\",\"name_long\":\"Bermuda\"},{\"name\":\"btn\",\"name_long\":\"Bhutan\"},{\"name\":\"bol\",\"name_long\":\"Bolivia\"},{\"name\":\"bih\",\"name_long\":\"Bosnia
+        and Herzegovina\"},{\"name\":\"bwa\",\"name_long\":\"Botswana\"},{\"name\":\"bra\",\"name_long\":\"Brazil\"},{\"name\":\"iot\",\"name_long\":\"British
+        Indian Ocean Territory\"},{\"name\":\"vgb\",\"name_long\":\"British Virgin
+        Islands\"},{\"name\":\"brn\",\"name_long\":\"Brunei\"},{\"name\":\"bgr\",\"name_long\":\"Bulgaria\"},{\"name\":\"bfa\",\"name_long\":\"Burkina
+        Faso\"},{\"name\":\"bdi\",\"name_long\":\"Burundi\"},{\"name\":\"khm\",\"name_long\":\"Cambodia\"},{\"name\":\"cmr\",\"name_long\":\"Cameroon\"},{\"name\":\"can\",\"name_long\":\"Canada\"},{\"name\":\"cpv\",\"name_long\":\"Cape
+        Verde\"},{\"name\":\"cym\",\"name_long\":\"Cayman Islands\"},{\"name\":\"caf\",\"name_long\":\"Central
+        African Republic\"},{\"name\":\"tcd\",\"name_long\":\"Chad\"},{\"name\":\"chl\",\"name_long\":\"Chile\"},{\"name\":\"chn\",\"name_long\":\"China\"},{\"name\":\"col\",\"name_long\":\"Colombia\"},{\"name\":\"com\",\"name_long\":\"Comoros\"},{\"name\":\"cok\",\"name_long\":\"Cook
+        Islands\"},{\"name\":\"cri\",\"name_long\":\"Costa Rica\"},{\"name\":\"hrv\",\"name_long\":\"Croatia\"},{\"name\":\"cub\",\"name_long\":\"Cuba\"},{\"name\":\"cuw\",\"name_long\":\"Cura\xE7ao\"},{\"name\":\"cyp\",\"name_long\":\"Cyprus\"},{\"name\":\"cze\",\"name_long\":\"Czech
+        Republic\"},{\"name\":\"cod\",\"name_long\":\"Democratic Republic of the Congo\"},{\"name\":\"dnk\",\"name_long\":\"Denmark\"},{\"name\":\"dji\",\"name_long\":\"Djibouti\"},{\"name\":\"dma\",\"name_long\":\"Dominica\"},{\"name\":\"dom\",\"name_long\":\"Dominican
+        Republic\"},{\"name\":\"tls\",\"name_long\":\"East Timor\"},{\"name\":\"ecu\",\"name_long\":\"Ecuador\"},{\"name\":\"egy\",\"name_long\":\"Egypt\"},{\"name\":\"slv\",\"name_long\":\"El
+        Salvador\"},{\"name\":\"gnq\",\"name_long\":\"Equatorial Guinea\"},{\"name\":\"eri\",\"name_long\":\"Eritrea\"},{\"name\":\"est\",\"name_long\":\"Estonia\"},{\"name\":\"eth\",\"name_long\":\"Ethiopia\"},{\"name\":\"flk\",\"name_long\":\"Falkland
+        Islands\"},{\"name\":\"fro\",\"name_long\":\"Faroe Islands\"},{\"name\":\"fsm\",\"name_long\":\"Federated
+        States of Micronesia\"},{\"name\":\"fji\",\"name_long\":\"Fiji\"},{\"name\":\"fin\",\"name_long\":\"Finland\"},{\"name\":\"fra\",\"name_long\":\"France\"},{\"name\":\"pyf\",\"name_long\":\"French
+        Polynesia\"},{\"name\":\"atf\",\"name_long\":\"French Southern and Antarctic
+        Lands\"},{\"name\":\"gab\",\"name_long\":\"Gabon\"},{\"name\":\"gmb\",\"name_long\":\"Gambia\"},{\"name\":\"geo\",\"name_long\":\"Georgia\"},{\"name\":\"deu\",\"name_long\":\"Germany\"},{\"name\":\"gha\",\"name_long\":\"Ghana\"},{\"name\":\"gib\",\"name_long\":\"Gibraltar\"},{\"name\":\"grc\",\"name_long\":\"Greece\"},{\"name\":\"grl\",\"name_long\":\"Greenland\"},{\"name\":\"grd\",\"name_long\":\"Grenada\"},{\"name\":\"gum\",\"name_long\":\"Guam\"},{\"name\":\"gtm\",\"name_long\":\"Guatemala\"},{\"name\":\"ggy\",\"name_long\":\"Guernsey\"},{\"name\":\"gin\",\"name_long\":\"Guinea\"},{\"name\":\"gnb\",\"name_long\":\"Guinea
+        Bissau\"},{\"name\":\"guy\",\"name_long\":\"Guyana\"},{\"name\":\"hti\",\"name_long\":\"Haiti\"},{\"name\":\"hmd\",\"name_long\":\"Heard
+        Island and McDonald Islands\"},{\"name\":\"hnd\",\"name_long\":\"Honduras\"},{\"name\":\"hkg\",\"name_long\":\"Hong
+        Kong S.A.R.\"},{\"name\":\"hun\",\"name_long\":\"Hungary\"},{\"name\":\"isl\",\"name_long\":\"Iceland\"},{\"name\":\"ind\",\"name_long\":\"India\"},{\"name\":\"idn\",\"name_long\":\"Indonesia\"},{\"name\":\"irn\",\"name_long\":\"Iran\"},{\"name\":\"irq\",\"name_long\":\"Iraq\"},{\"name\":\"irl\",\"name_long\":\"Ireland\"},{\"name\":\"imn\",\"name_long\":\"Isle
+        of Man\"},{\"name\":\"isr\",\"name_long\":\"Israel\"},{\"name\":\"ita\",\"name_long\":\"Italy\"},{\"name\":\"civ\",\"name_long\":\"Ivory
+        Coast\"},{\"name\":\"jam\",\"name_long\":\"Jamaica\"},{\"name\":\"jpn\",\"name_long\":\"Japan\"},{\"name\":\"jey\",\"name_long\":\"Jersey\"},{\"name\":\"jor\",\"name_long\":\"Jordan\"},{\"name\":\"kaz\",\"name_long\":\"Kazakhstan\"},{\"name\":\"ken\",\"name_long\":\"Kenya\"},{\"name\":\"kir\",\"name_long\":\"Kiribati\"},{\"name\":\"kwt\",\"name_long\":\"Kuwait\"},{\"name\":\"kgz\",\"name_long\":\"Kyrgyzstan\"},{\"name\":\"lao\",\"name_long\":\"Laos\"},{\"name\":\"lva\",\"name_long\":\"Latvia\"},{\"name\":\"lbn\",\"name_long\":\"Lebanon\"},{\"name\":\"lso\",\"name_long\":\"Lesotho\"},{\"name\":\"lbr\",\"name_long\":\"Liberia\"},{\"name\":\"lby\",\"name_long\":\"Libya\"},{\"name\":\"lie\",\"name_long\":\"Liechtenstein\"},{\"name\":\"ltu\",\"name_long\":\"Lithuania\"},{\"name\":\"lux\",\"name_long\":\"Luxembourg\"},{\"name\":\"mac\",\"name_long\":\"Macao
+        S.A.R\"},{\"name\":\"mkd\",\"name_long\":\"Macedonia\"},{\"name\":\"mdg\",\"name_long\":\"Madagascar\"},{\"name\":\"mwi\",\"name_long\":\"Malawi\"},{\"name\":\"mys\",\"name_long\":\"Malaysia\"},{\"name\":\"mdv\",\"name_long\":\"Maldives\"},{\"name\":\"mli\",\"name_long\":\"Mali\"},{\"name\":\"mlt\",\"name_long\":\"Malta\"},{\"name\":\"mhl\",\"name_long\":\"Marshall
+        Islands\"},{\"name\":\"mrt\",\"name_long\":\"Mauritania\"},{\"name\":\"mus\",\"name_long\":\"Mauritius\"},{\"name\":\"mex\",\"name_long\":\"Mexico\"},{\"name\":\"mda\",\"name_long\":\"Moldova\"},{\"name\":\"mco\",\"name_long\":\"Monaco\"},{\"name\":\"mng\",\"name_long\":\"Mongolia\"},{\"name\":\"mne\",\"name_long\":\"Montenegro\"},{\"name\":\"msr\",\"name_long\":\"Montserrat\"},{\"name\":\"mar\",\"name_long\":\"Morocco\"},{\"name\":\"moz\",\"name_long\":\"Mozambique\"},{\"name\":\"mmr\",\"name_long\":\"Myanmar\"},{\"name\":\"nam\",\"name_long\":\"Namibia\"},{\"name\":\"nru\",\"name_long\":\"Nauru\"},{\"name\":\"npl\",\"name_long\":\"Nepal\"},{\"name\":\"nld\",\"name_long\":\"Netherlands\"},{\"name\":\"ncl\",\"name_long\":\"New
+        Caledonia\"},{\"name\":\"nzl\",\"name_long\":\"New Zealand\"},{\"name\":\"nic\",\"name_long\":\"Nicaragua\"},{\"name\":\"ner\",\"name_long\":\"Niger\"},{\"name\":\"nga\",\"name_long\":\"Nigeria\"},{\"name\":\"niu\",\"name_long\":\"Niue\"},{\"name\":\"nfk\",\"name_long\":\"Norfolk
+        Island\"},{\"name\":\"mnp\",\"name_long\":\"Northern Mariana Islands\"},{\"name\":\"prk\",\"name_long\":\"North
+        Korea\"},{\"name\":\"nor\",\"name_long\":\"Norway\"},{\"name\":\"omn\",\"name_long\":\"Oman\"},{\"name\":\"pak\",\"name_long\":\"Pakistan\"},{\"name\":\"plw\",\"name_long\":\"Palau\"},{\"name\":\"pse\",\"name_long\":\"Palestine\"},{\"name\":\"pan\",\"name_long\":\"Panama\"},{\"name\":\"png\",\"name_long\":\"Papua
+        New Guinea\"},{\"name\":\"pry\",\"name_long\":\"Paraguay\"},{\"name\":\"per\",\"name_long\":\"Peru\"},{\"name\":\"phl\",\"name_long\":\"Philippines\"},{\"name\":\"pcn\",\"name_long\":\"Pitcairn
+        Islands\"},{\"name\":\"pol\",\"name_long\":\"Poland\"},{\"name\":\"prt\",\"name_long\":\"Portugal\"},{\"name\":\"pri\",\"name_long\":\"Puerto
+        Rico\"},{\"name\":\"qat\",\"name_long\":\"Qatar\"},{\"name\":\"cog\",\"name_long\":\"Republic
+        of Congo\"},{\"name\":\"srb\",\"name_long\":\"Republic of Serbia\"},{\"name\":\"rou\",\"name_long\":\"Romania\"},{\"name\":\"rus\",\"name_long\":\"Russia\"},{\"name\":\"rwa\",\"name_long\":\"Rwanda\"},{\"name\":\"blm\",\"name_long\":\"Saint
+        Barthelemy\"},{\"name\":\"shn\",\"name_long\":\"Saint Helena\"},{\"name\":\"kna\",\"name_long\":\"Saint
+        Kitts and Nevis\"},{\"name\":\"lca\",\"name_long\":\"Saint Lucia\"},{\"name\":\"maf\",\"name_long\":\"Saint
+        Martin\"},{\"name\":\"spm\",\"name_long\":\"Saint Pierre and Miquelon\"},{\"name\":\"vct\",\"name_long\":\"Saint
+        Vincent and the Grenadines\"},{\"name\":\"wsm\",\"name_long\":\"Samoa\"},{\"name\":\"smr\",\"name_long\":\"San
+        Marino\"},{\"name\":\"stp\",\"name_long\":\"Sao Tome and Principe\"},{\"name\":\"sau\",\"name_long\":\"Saudi
+        Arabia\"},{\"name\":\"sen\",\"name_long\":\"Senegal\"},{\"name\":\"syc\",\"name_long\":\"Seychelles\"},{\"name\":\"sle\",\"name_long\":\"Sierra
+        Leone\"},{\"name\":\"sgp\",\"name_long\":\"Singapore\"},{\"name\":\"sxm\",\"name_long\":\"Sint
+        Maarten\"},{\"name\":\"svk\",\"name_long\":\"Slovakia\"},{\"name\":\"svn\",\"name_long\":\"Slovenia\"},{\"name\":\"slb\",\"name_long\":\"Solomon
+        Islands\"},{\"name\":\"som\",\"name_long\":\"Somalia\"},{\"name\":\"zaf\",\"name_long\":\"South
+        Africa\"},{\"name\":\"sgs\",\"name_long\":\"South Georgia and South Sandwich
+        Islands\"},{\"name\":\"kor\",\"name_long\":\"South Korea\"},{\"name\":\"ssd\",\"name_long\":\"South
+        Sudan\"},{\"name\":\"esp\",\"name_long\":\"Spain\"},{\"name\":\"lka\",\"name_long\":\"Sri
+        Lanka\"},{\"name\":\"sdn\",\"name_long\":\"Sudan\"},{\"name\":\"sur\",\"name_long\":\"Suriname\"},{\"name\":\"swz\",\"name_long\":\"Swaziland\"},{\"name\":\"swe\",\"name_long\":\"Sweden\"},{\"name\":\"che\",\"name_long\":\"Switzerland\"},{\"name\":\"syr\",\"name_long\":\"Syria\"},{\"name\":\"twn\",\"name_long\":\"Taiwan\"},{\"name\":\"tjk\",\"name_long\":\"Tajikistan\"},{\"name\":\"tha\",\"name_long\":\"Thailand\"},{\"name\":\"bhs\",\"name_long\":\"The
+        Bahamas\"},{\"name\":\"tgo\",\"name_long\":\"Togo\"},{\"name\":\"ton\",\"name_long\":\"Tonga\"},{\"name\":\"tto\",\"name_long\":\"Trinidad
+        and Tobago\"},{\"name\":\"tun\",\"name_long\":\"Tunisia\"},{\"name\":\"tur\",\"name_long\":\"Turkey\"},{\"name\":\"tkm\",\"name_long\":\"Turkmenistan\"},{\"name\":\"tca\",\"name_long\":\"Turks
+        and Caicos Islands\"},{\"name\":\"tuv\",\"name_long\":\"Tuvalu\"},{\"name\":\"uga\",\"name_long\":\"Uganda\"},{\"name\":\"ukr\",\"name_long\":\"Ukraine\"},{\"name\":\"are\",\"name_long\":\"United
+        Arab Emirates\"},{\"name\":\"gbr\",\"name_long\":\"United Kingdom\"},{\"name\":\"tza\",\"name_long\":\"United
+        Republic of Tanzania\"},{\"name\":\"umi\",\"name_long\":\"United States Minor
+        Outlying Islands\"},{\"name\":\"usa\",\"name_long\":\"United States of America\"},{\"name\":\"vir\",\"name_long\":\"United
+        States Virgin Islands\"},{\"name\":\"ury\",\"name_long\":\"Uruguay\"},{\"name\":\"uzb\",\"name_long\":\"Uzbekistan\"},{\"name\":\"vut\",\"name_long\":\"Vanuatu\"},{\"name\":\"vat\",\"name_long\":\"Vatican\"},{\"name\":\"ven\",\"name_long\":\"Venezuela\"},{\"name\":\"vnm\",\"name_long\":\"Vietnam\"},{\"name\":\"wlf\",\"name_long\":\"Wallis
+        and Futuna\"},{\"name\":\"esh\",\"name_long\":\"Western Sahara\"},{\"name\":\"yem\",\"name_long\":\"Yemen\"},{\"name\":\"zmb\",\"name_long\":\"Zambia\"},{\"name\":\"zwe\",\"name_long\":\"Zimbabwe\"}]"
+    headers:
+      Content-Length:
+      - '9525'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 Mar 2023 16:22:44 GMT
+      Server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+version: 1

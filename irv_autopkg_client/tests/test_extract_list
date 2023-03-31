@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://global.infrastructureresilience.org/extract/v1/packages
+  response:
+    body:
+      string: '[{"boundary_name":"abw","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/abw/"},{"boundary_name":"afg","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/afg/"},{"boundary_name":"ago","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/ago/"},{"boundary_name":"ala","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/ala/"},{"boundary_name":"alb","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/alb/"},{"boundary_name":"and","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/and/"},{"boundary_name":"are","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/are/"},{"boundary_name":"arm","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/arm/"},{"boundary_name":"asm","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/asm/"},{"boundary_name":"aus","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/aus/"},{"boundary_name":"bgd","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/bgd/"},{"boundary_name":"bhs","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/bhs/"},{"boundary_name":"brn","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/brn/"},{"boundary_name":"cmr","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/cmr/"},{"boundary_name":"egy","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/egy/"},{"boundary_name":"esp","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/esp/"},{"boundary_name":"fra","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/fra/"},{"boundary_name":"gbr","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/gbr/"},{"boundary_name":"gmb","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/gmb/"},{"boundary_name":"gnb","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/gnb/"},{"boundary_name":"idn","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/idn/"},{"boundary_name":"ind","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/ind/"},{"boundary_name":"ken","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/ken/"},{"boundary_name":"khm","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/khm/"},{"boundary_name":"mar","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/mar/"},{"boundary_name":"mex","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/mex/"},{"boundary_name":"pak","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/pak/"},{"boundary_name":"pol","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/pol/"},{"boundary_name":"rus","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/rus/"},{"boundary_name":"tha","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/tha/"},{"boundary_name":"usa","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/usa/"},{"boundary_name":"vnm","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/vnm/"},{"boundary_name":"zaf","uri":"https://irv-autopkg.s3.eu-west-2.amazonaws.com/zaf/"}]'
+    headers:
+      Content-Length:
+      - '2773'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 Mar 2023 16:22:45 GMT
+      Server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -9,8 +9,10 @@ from shapely.geometry import shape
 
 BASE_URL: str = "https://global.infrastructureresilience.org/extract/v1/"
 
-# N.B. requests will log request URLs @ debug level
-logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
+# N.B.
+# requests will log request URLs @ level=logging.DEBUG level
+# vcrpy will log cassette usage @ level=logging.INFO level
+logging.basicConfig(format="%(asctime)s %(message)s")
 
 
 class Client:
@@ -95,7 +97,7 @@ class Client:
         Search for a boundary by name or latitude, longitude coordinate pair.
 
         Args:
-            name: Identifier for boundary (e.g. 'egy' for Egypt)
+            name: All or part of the country's long name (e.g. United Kingdom)
             latitude: Latitude in decimal degrees
             longitude: Longitude in decimal degrees
         """
@@ -105,6 +107,8 @@ class Client:
         if (latitude is not None) and (longitude is not None):
             query_params["latitude"] = latitude
             query_params["longitude"] = longitude
+        if not query_params:
+            raise RuntimeError("Must specify search kwargs: name or latitude and longitude")
 
         return self.request("GET", "boundaries/search", params=query_params)
 

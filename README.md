@@ -80,3 +80,10 @@ client.extract_download(
     overwrite=True
 )
 ```
+
+## Testing
+
+To run the bundled tests, try:
+```
+python -m unittest
+```

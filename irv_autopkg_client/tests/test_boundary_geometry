@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://global.infrastructureresilience.org/extract/v1/boundaries/vat
+  response:
+    body:
+      string: '{"name":"vat","name_long":"Vatican","admin_level":"0","geometry":{"type":"MultiPolygon","coordinates":[[[[12.453136917,41.902751941],[12.452714082,41.903016213],[12.452766936,41.903439049],[12.453031208,41.903914738],[12.453982588,41.903861884],[12.454035442,41.902751941],[12.453136917,41.902751941]]]]},"envelope":{"type":"Polygon","coordinates":[[[12.452714082,41.902751941],[12.452714082,41.903914738],[12.454035442,41.903914738],[12.454035442,41.902751941],[12.452714082,41.902751941]]]}}'
+    headers:
+      Content-Length:
+      - '493'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 31 Mar 2023 16:21:13 GMT
+      Server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+version: 1

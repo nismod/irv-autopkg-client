@@ -1,5 +1,7 @@
 # irv-autopkg-client
-A client library for accessing IRV Autopackage API
+A client library for accessing the irv-autopkg API.
+
+The irv-autopkg service allows users to extract portions of global datasets pertaining to climate risk and resilience. This Python package is a client for communicating with the irv-autopkg API.
 
 ## Installation
 
@@ -21,6 +23,8 @@ For a list of available methods, try:
 ```
 help(client)
 ```
+
+## Quick start
 
 Is the API responding?
 ```

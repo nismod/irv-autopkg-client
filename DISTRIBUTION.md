@@ -1,7 +1,7 @@
-## Building / publishing this Client
+## Publishing
 
 This project uses [Poetry](https://python-poetry.org/) to manage dependencies and packaging.
 
-Here are the basics:
-- Update the metadata in pyproject.toml (e.g. authors, version)
-- Publish the client with `poetry publish --build`
+To publish, first update the metadata in pyproject.toml (e.g. authors, version)
+
+Then publish to PyPI with `poetry publish --build`.

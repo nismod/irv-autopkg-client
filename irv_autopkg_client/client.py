@@ -24,12 +24,7 @@ class Client:
         _session: A requests.Session used for all requests
     """
 
-    def __init__(
-        self,
-        base_url: str = BASE_URL,
-        timeout: float = 20,
-        **kwargs
-    ):
+    def __init__(self, base_url: str = BASE_URL, timeout: float = 20, **kwargs):
         self.base_url = base_url
         self.timeout = timeout
         self._session = requests.Session()
@@ -66,13 +61,7 @@ class Client:
 
         url = urllib.parse.urljoin(self.base_url, route)
 
-        response = self._session.request(
-            verb,
-            url,
-            *args,
-            timeout=timeout,
-            **kwargs
-        )
+        response = self._session.request(verb, url, *args, timeout=timeout, **kwargs)
 
         response.raise_for_status()
 
@@ -100,11 +89,7 @@ class Client:
         return shape(self.boundary(name)["geometry"])
 
     def boundary_search(
-        self,
-        *,
-        name: Optional[str] = None,
-        latitude: Optional[float] = None,
-        longitude: Optional[float] = None
+        self, *, name: Optional[str] = None, latitude: Optional[float] = None, longitude: Optional[float] = None
     ) -> dict:
         """
         Search for a boundary by name or latitude, longitude coordinate pair.
@@ -139,11 +124,7 @@ class Client:
         return self.request("GET", f"packages/{boundary_name}")
 
     def extract_download(
-        self,
-        boundary_name: str,
-        download_dir: str,
-        dataset_filter: Optional[list[str]] = None,
-        overwrite: bool = False
+        self, boundary_name: str, download_dir: str, dataset_filter: Optional[list[str]] = None, overwrite: bool = False
     ) -> None:
         """
         Download the files contained within an extract to a given directory.
@@ -161,7 +142,6 @@ class Client:
 
         url_to_file_path = {}
         for dataset in extract["datapackage"]["resources"]:
-
             dataset_id = ".".join([dataset["name"], dataset["version"]])
             if dataset_filter is not None:
                 if dataset_id not in dataset_filter:
@@ -196,8 +176,8 @@ class Client:
         """
         name, version = name_version.split(".")
         response = self.request("GET", "processors")
-        dataset, = [dataset for dataset in response if dataset["name"] == name]
-        version, = [version for version in dataset["versions"] if version["name"] == name_version]
+        (dataset,) = [dataset for dataset in response if dataset["name"] == name]
+        (version,) = [version for version in dataset["versions"] if version["name"] == name_version]
         return version
 
     def dataset_list(self) -> list:
@@ -220,14 +200,7 @@ class Client:
         Returns:
             Extract job ID
         """
-        response = self.request(
-            "POST",
-            "jobs",
-            json = {
-                "boundary_name": boundary_name,
-                "processors": datasets
-            }
-        )
+        response = self.request("POST", "jobs", json={"boundary_name": boundary_name, "processors": datasets})
         return response["job_id"]
 
     def job_status(self, uuid: str) -> dict:

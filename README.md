@@ -97,9 +97,35 @@ client.extract_download(
 )
 ```
 
+## Development
+
+First clone this repository (currently hosted at
+[nismod/irv-autopkg-client](https://github.com/nismod/irv-autopkg-client.git)).
+
+To install the package in editable mode, run:
+
+```
+pip install -e .
+pip install vcrpy = "^4.0"
+```
+
+Alternatively, if you have [`poetry`](https://python-poetry.org/docs/), run:
+
+```
+poetry install
+```
+
 ## Testing
 
 To run the bundled tests, try:
+
 ```
 python -m unittest
+```
+
+With `poetry`, either work within `poetry shell`, or run single commands in the
+virtual environment:
+
+```
+poetry run python -m unittest
 ```

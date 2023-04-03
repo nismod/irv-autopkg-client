@@ -2,7 +2,7 @@ import logging
 import os
 import urllib.parse
 import requests
-from typing import Optional
+from typing import Optional, List, Dict
 
 
 BASE_URL: str = "https://global.infrastructureresilience.org/extract/v1/"
@@ -42,7 +42,7 @@ class Client:
             response = requests.get(url)
             file.write(response.content)
 
-    def request(self, verb: str, route: str, *args, **kwargs) -> dict:
+    def request(self, verb: str, route: str, *args, **kwargs) -> Dict:
         """
         Wrap requests' request and prepend self.base_url to the requested route.
 
@@ -67,7 +67,7 @@ class Client:
 
         return response.json()
 
-    def boundary(self, name: str) -> dict:
+    def boundary(self, name: str) -> Dict:
         """
         Detailed view of a given boundary.
 
@@ -76,7 +76,7 @@ class Client:
         """
         return self.request("GET", f"boundaries/{name}")
 
-    def boundary_geometry(self, name: str) -> dict:
+    def boundary_geometry(self, name: str) -> Dict:
         """
         Boundary geometry.
 
@@ -94,7 +94,7 @@ class Client:
         name: Optional[str] = None,
         latitude: Optional[float] = None,
         longitude: Optional[float] = None,
-    ) -> dict:
+    ) -> Dict:
         """
         Search for a boundary by name or latitude, longitude coordinate pair.
 
@@ -116,13 +116,13 @@ class Client:
 
         return self.request("GET", "boundaries/search", params=query_params)
 
-    def boundary_list(self) -> list:
+    def boundary_list(self) -> List:
         """
         List of available boundaries.
         """
         return self.request("GET", "boundaries")
 
-    def extract(self, boundary_name: str) -> dict:
+    def extract(self, boundary_name: str) -> Dict:
         """
         Details of existing extract.
 
@@ -135,7 +135,7 @@ class Client:
         self,
         boundary_name: str,
         download_dir: str,
-        dataset_filter: Optional[list[str]] = None,
+        dataset_filter: Optional[List[str]] = None,
         overwrite: bool = False,
     ) -> None:
         """
@@ -174,13 +174,13 @@ class Client:
             )
             self.download_file(url, filepath)
 
-    def extract_list(self) -> list:
+    def extract_list(self) -> List:
         """
         List of boundaries with already processed data extracts.
         """
         return self.request("GET", "packages")
 
-    def dataset(self, name_version: str) -> dict:
+    def dataset(self, name_version: str) -> Dict:
         """
         Return details on a given dataset.
 
@@ -198,7 +198,7 @@ class Client:
         ]
         return version
 
-    def dataset_list(self) -> list:
+    def dataset_list(self) -> List:
         """
         List of dataset identifiers available to extract from.
         """
@@ -207,7 +207,7 @@ class Client:
             version["name"] for dataset in response for version in dataset["versions"]
         ]
 
-    def job_submit(self, boundary_name: str, datasets: list[str]) -> str:
+    def job_submit(self, boundary_name: str, datasets: List[str]) -> str:
         """
         Submit a new extract job to the queue. If successfully submitted,
         returns UUID of created job.
@@ -227,7 +227,7 @@ class Client:
         )
         return response["job_id"]
 
-    def job_status(self, uuid: str) -> dict:
+    def job_status(self, uuid: str) -> Dict:
         """
         Information on job.
 

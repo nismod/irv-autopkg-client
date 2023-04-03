@@ -89,7 +89,11 @@ class Client:
         return self.boundary(name)["geometry"]
 
     def boundary_search(
-        self, *, name: Optional[str] = None, latitude: Optional[float] = None, longitude: Optional[float] = None
+        self,
+        *,
+        name: Optional[str] = None,
+        latitude: Optional[float] = None,
+        longitude: Optional[float] = None,
     ) -> dict:
         """
         Search for a boundary by name or latitude, longitude coordinate pair.
@@ -106,7 +110,9 @@ class Client:
             query_params["latitude"] = latitude
             query_params["longitude"] = longitude
         if not query_params:
-            raise RuntimeError("Must specify search kwargs: name or latitude and longitude")
+            raise RuntimeError(
+                "Must specify search kwargs: name or latitude and longitude"
+            )
 
         return self.request("GET", "boundaries/search", params=query_params)
 
@@ -126,7 +132,11 @@ class Client:
         return self.request("GET", f"packages/{boundary_name}")
 
     def extract_download(
-        self, boundary_name: str, download_dir: str, dataset_filter: Optional[list[str]] = None, overwrite: bool = False
+        self,
+        boundary_name: str,
+        download_dir: str,
+        dataset_filter: Optional[list[str]] = None,
+        overwrite: bool = False,
     ) -> None:
         """
         Download the files contained within an extract to a given directory.
@@ -159,7 +169,9 @@ class Client:
                 url_to_file_path[url] = os.path.join(folder_path, filename)
 
         for i, (url, filepath) in enumerate(url_to_file_path.items()):
-            logging.info(f"Downloading {i + 1} of {len(url_to_file_path)} to {filepath}")
+            logging.info(
+                f"Downloading {i + 1} of {len(url_to_file_path)} to {filepath}"
+            )
             self.download_file(url, filepath)
 
     def extract_list(self) -> list:
@@ -179,7 +191,11 @@ class Client:
         name, version = name_version.split(".")
         response = self.request("GET", "processors")
         (dataset,) = [dataset for dataset in response if dataset["name"] == name]
-        (version,) = [version for version in dataset["versions"] if version["name"] == name_version]
+        (version,) = [
+            version
+            for version in dataset["versions"]
+            if version["name"] == name_version
+        ]
         return version
 
     def dataset_list(self) -> list:
@@ -187,7 +203,9 @@ class Client:
         List of dataset identifiers available to extract from.
         """
         response = self.request("GET", "processors")
-        return [version["name"] for dataset in response for version in dataset["versions"]]
+        return [
+            version["name"] for dataset in response for version in dataset["versions"]
+        ]
 
     def job_submit(self, boundary_name: str, datasets: list[str]) -> str:
         """
@@ -202,7 +220,11 @@ class Client:
         Returns:
             Extract job ID
         """
-        response = self.request("POST", "jobs", json={"boundary_name": boundary_name, "processors": datasets})
+        response = self.request(
+            "POST",
+            "jobs",
+            json={"boundary_name": boundary_name, "processors": datasets},
+        )
         return response["job_id"]
 
     def job_status(self, uuid: str) -> dict:

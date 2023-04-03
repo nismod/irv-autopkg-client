@@ -27,34 +27,40 @@ class TestClient(unittest.TestCase):
 
     @vcr.use_cassette()
     def test_boundary(self):
-        expected_keys = set(['name', 'name_long', 'admin_level', 'geometry', 'envelope'])
+        expected_keys = set(
+            ["name", "name_long", "admin_level", "geometry", "envelope"]
+        )
         assert expected_keys == set(self.client.boundary("vat").keys())
 
     @vcr.use_cassette()
     def test_boundary_geometry(self):
         vatican_geojson = {
             "type": "MultiPolygon",
-            "coordinates": [[[
-                [12.453136917, 41.902751941],
-                [12.452714082, 41.903016213],
-                [12.452766936, 41.903439049],
-                [12.453031208, 41.903914738],
-                [12.453982588, 41.903861884],
-                [12.454035442, 41.902751941],
-                [12.453136917, 41.902751941]
-            ]]]
+            "coordinates": [
+                [
+                    [
+                        [12.453136917, 41.902751941],
+                        [12.452714082, 41.903016213],
+                        [12.452766936, 41.903439049],
+                        [12.453031208, 41.903914738],
+                        [12.453982588, 41.903861884],
+                        [12.454035442, 41.902751941],
+                        [12.453136917, 41.902751941],
+                    ]
+                ]
+            ],
         }
         geom = self.client.boundary_geometry("vat")
         assert vatican_geojson == geom
 
     @vcr.use_cassette()
     def test_boundary_search_by_coordinates(self):
-        expected = [{'name': 'gbr', 'name_long': 'United Kingdom'}]
+        expected = [{"name": "gbr", "name_long": "United Kingdom"}]
         assert expected == self.client.boundary_search(longitude=-1, latitude=52)
 
     @vcr.use_cassette()
     def test_boundary_search_by_name(self):
-        expected = [{'name': 'gbr', 'name_long': 'United Kingdom'}]
+        expected = [{"name": "gbr", "name_long": "United Kingdom"}]
         assert expected == self.client.boundary_search(name="united kingdom")
 
     @vcr.use_cassette()
@@ -72,7 +78,9 @@ class TestClient(unittest.TestCase):
 
     @vcr.use_cassette()
     def test_extract(self):
-        expected_keys = set(['boundary_name', 'uri', 'boundary', 'processors', 'datapackage'])
+        expected_keys = set(
+            ["boundary_name", "uri", "boundary", "processors", "datapackage"]
+        )
         assert expected_keys == self.client.extract("mar").keys()
 
     @vcr.use_cassette()
@@ -87,12 +95,25 @@ class TestClient(unittest.TestCase):
     def test_dataset(self):
         expected_keys = set(
             [
-                'name', 'description', 'version', 'status', 'uri', 'data_author',
-                'data_title', 'data_title_long', 'data_summary', 'data_citation',
-                'data_license', 'data_origin_url', 'data_formats'
+                "name",
+                "description",
+                "version",
+                "status",
+                "uri",
+                "data_author",
+                "data_title",
+                "data_title_long",
+                "data_summary",
+                "data_citation",
+                "data_license",
+                "data_origin_url",
+                "data_formats",
             ]
         )
-        assert expected_keys == self.client.dataset("gri_osm.roads_and_rail_version_1").keys()
+        assert (
+            expected_keys
+            == self.client.dataset("gri_osm.roads_and_rail_version_1").keys()
+        )
 
     @vcr.use_cassette()
     def test_dataset_list(self):

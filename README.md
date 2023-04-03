@@ -2,20 +2,25 @@
 
 [![PyPI](https://img.shields.io/pypi/v/irv-autopkg-client)](https://pypi.org/project/irv-autopkg-client/)
 
-A client library for accessing the irv-autopkg API, currently hosted at [global.infrastructureresilience.org](https://global.infrastructureresilience.org/extract/redoc).
+A client library for accessing the irv-autopkg API, currently hosted at
+[global.infrastructureresilience.org](https://global.infrastructureresilience.org/extract/redoc).
 
-The irv-autopkg service allows users to extract portions of global datasets pertaining to climate risk and resilience. This Python package is a client for communicating with the irv-autopkg API.
+The irv-autopkg service allows users to extract portions of global datasets
+pertaining to climate risk and resilience. This Python package is a client for
+communicating with the irv-autopkg API.
 
 ## Installation
 
 Install from PyPI with:
+
 ```
 pip install irv-autopkg-client
 ```
 
 ## Usage
 
-Create a client object to establish a session
+Create a client object to establish a session:
+
 ```
 import irv_autopkg_client
 client = irv_autopkg_client.Client()
@@ -30,26 +35,31 @@ help(client)
 ## Quick start
 
 Is the API responding?
+
 ```
 client.server_readiness()
 ```
 
 Which boundaries can we create extracts for?
+
 ```
 client.boundary_list()
 ```
 
 Which datasets are available?
+
 ```
 client.dataset_list()
 ```
 
 Get information on a specific dataset:
+
 ```
 client.dataset("wri_aqueduct.version_2")
 ```
 
 To submit an extract job:
+
 ```
 job_id = client.job_submit(
     country_iso,
@@ -61,16 +71,19 @@ job_id = client.job_submit(
 ```
 
 We can then check if the job is complete:
+
 ```
 client.job_complete(job_id)
 ```
 
 Get the boundary of a territory:
+
 ```
 boundary = client.boundary_geometry("bgd")
 ```
 
 Download some extracted data:
+
 ```
 client.extract_download(
     "bgd",

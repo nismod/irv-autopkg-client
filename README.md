@@ -1,5 +1,8 @@
 # irv-autopkg-client
-A client library for accessing the irv-autopkg API.
+
+[![PyPI](https://img.shields.io/pypi/v/irv-autopkg-client)](https://pypi.org/project/irv-autopkg-client/)
+
+A client library for accessing the irv-autopkg API, currently hosted at [global.infrastructureresilience.org](https://global.infrastructureresilience.org/extract/redoc).
 
 The irv-autopkg service allows users to extract portions of global datasets pertaining to climate risk and resilience. This Python package is a client for communicating with the irv-autopkg API.
 

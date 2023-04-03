@@ -4,8 +4,6 @@ import urllib.parse
 import requests
 from typing import Optional
 
-from shapely.geometry import shape
-
 
 BASE_URL: str = "https://global.infrastructureresilience.org/extract/v1/"
 
@@ -78,7 +76,7 @@ class Client:
         """
         return self.request("GET", f"boundaries/{name}")
 
-    def boundary_geometry(self, name: str) -> shape:
+    def boundary_geometry(self, name: str) -> dict:
         """
         Boundary geometry.
 
@@ -86,9 +84,9 @@ class Client:
             name: Identifier for boundary (e.g. 'egy' for Egypt)
 
         Returns:
-            Shapely geometry of boundary
+            dict as GeoJSON/fiona geometry of boundary
         """
-        return shape(self.boundary(name)["geometry"])
+        return self.boundary(name)["geometry"]
 
     def boundary_search(
         self, *, name: Optional[str] = None, latitude: Optional[float] = None, longitude: Optional[float] = None

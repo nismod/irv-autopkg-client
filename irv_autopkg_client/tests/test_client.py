@@ -1,6 +1,5 @@
 import unittest
 
-import shapely
 import vcr
 
 from irv_autopkg_client import Client
@@ -33,14 +32,20 @@ class TestClient(unittest.TestCase):
 
     @vcr.use_cassette()
     def test_boundary_geometry(self):
-        vatican_wkt = (
-            "MULTIPOLYGON (((12.453136917 41.902751941, "
-            "12.452714082 41.903016213, 12.452766936 41.903439049, "
-            "12.453031208 41.903914738, 12.453982588 41.903861884, "
-            "12.454035442 41.902751941, 12.453136917 41.902751941)))"
-        )
+        vatican_geojson = {
+            "type": "MultiPolygon",
+            "coordinates": [[[
+                [12.453136917, 41.902751941],
+                [12.452714082, 41.903016213],
+                [12.452766936, 41.903439049],
+                [12.453031208, 41.903914738],
+                [12.453982588, 41.903861884],
+                [12.454035442, 41.902751941],
+                [12.453136917, 41.902751941]
+            ]]]
+        }
         geom = self.client.boundary_geometry("vat")
-        assert shapely.from_wkt(vatican_wkt) == geom
+        assert vatican_geojson == geom
 
     @vcr.use_cassette()
     def test_boundary_search_by_coordinates(self):

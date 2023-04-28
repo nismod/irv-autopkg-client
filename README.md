@@ -129,3 +129,8 @@ virtual environment:
 ```
 poetry run python -m unittest
 ```
+
+
+## Acknowledgments
+
+This research received funding from the FCDO Climate Compatible Growth Programme. The views expressed here do not necessarily reflect the UK government's official policies. 

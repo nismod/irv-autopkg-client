@@ -207,44 +207,6 @@ class Client:
             version["name"] for dataset in response for version in dataset["versions"]
         ]
 
-    def job_submit(self, boundary_name: str, datasets: List[str]) -> str:
-        """
-        Submit a new extract job to the queue. If successfully submitted,
-        returns UUID of created job.
-
-        Args:
-            boundary_name: Name of the boundary to extract
-            datasets: List of datasets to extract, in the name.version style,
-                e.g. ["gri_osm.roads_and_rail_version_1"]
-
-        Returns:
-            Extract job ID
-        """
-        response = self.request(
-            "POST",
-            "jobs",
-            json={"boundary_name": boundary_name, "processors": datasets},
-        )
-        return response["job_id"]
-
-    def job_status(self, uuid: str) -> Dict:
-        """
-        Information on job.
-
-        Args:
-            uuid: Unique ID that references an extract job.
-        """
-        return self.request("GET", f"jobs/{uuid}")
-
-    def job_complete(self, uuid: str) -> bool:
-        """
-        Check if a processing job is completed, return True if so.
-
-        Args:
-            uuid: Unique ID that references an extract job.
-        """
-        return self.job_status(uuid)["job_group_status"] == "COMPLETE"
-
     def server_liveness(self) -> bool:
         """
         Check the API is alive.

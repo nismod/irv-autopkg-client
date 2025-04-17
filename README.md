@@ -88,7 +88,7 @@ To install the package in editable mode, run:
 
 ```
 pip install -e .
-pip install vcrpy~=4.0
+pip install vcrpy~=7.0
 ```
 
 Alternatively, if you have [`poetry`](https://python-poetry.org/docs/), run:

@@ -58,24 +58,6 @@ Get information on a specific dataset:
 client.dataset("wri_aqueduct.version_2")
 ```
 
-To submit an extract job:
-
-```
-job_id = client.job_submit(
-    country_iso,
-    [
-        "gri_osm.roads_and_rail_version_1",
-        "wri_aqueduct.version_2"
-    ]
-)
-```
-
-We can then check if the job is complete:
-
-```
-client.job_complete(job_id)
-```
-
 Get the boundary of a territory:
 
 ```
